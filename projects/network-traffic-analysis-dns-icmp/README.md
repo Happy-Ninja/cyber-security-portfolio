@@ -71,7 +71,7 @@ The client attempted to query the domain `yummyrecipesforme.com` using UDP to DN
 
 This repeated pattern indicated that DNS resolution was failing because the DNS service was unreachable.
 
-<img src="./images/tcpdump-dns-icmp-log.png" alt="tcpdump output showing UDP DNS queries and ICMP port unreachable responses" width="900">
+<img src="/projects/network-traffic-analysis-dns-icmp/images/tcpdump-dns-icmp-log.png.png" alt="tcpdump output showing UDP DNS queries and ICMP port unreachable responses" width="900">
 
 *Ref 1: tcpdump output showing repeated UDP DNS queries to port 53 followed by ICMP `udp port 53 unreachable` responses.*
 
