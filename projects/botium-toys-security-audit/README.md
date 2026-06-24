@@ -1,4 +1,3 @@
-```md
 # Mock Security Audit: Botium Toys
 
 ## Overview
@@ -134,4 +133,3 @@ This was a useful introduction to governance, risk and compliance concepts, and 
 - Technical documentation
 - Structured analysis
 - Security recommendations
-```
