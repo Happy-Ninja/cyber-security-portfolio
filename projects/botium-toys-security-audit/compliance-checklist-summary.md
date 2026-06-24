@@ -4,72 +4,74 @@
 
 This document summarises the controls and compliance checklist completed as part of the mock Botium Toys security audit.
 
-The checklist was used to review whether key security controls were in place and to identify areas where the organisation may need to improve its security posture.
+The checklist was used to review whether key security controls and compliance best practices were currently in place, based on the provided scope, goals and risk assessment report.
 
-This summary has been written in my own words for portfolio purposes.
-
----
-
-## Controls Reviewed
-
-The checklist considered a range of administrative, technical and physical security controls, including:
-
-- Access control
-- Least privilege
-- Separation of duties
-- Disaster recovery planning
-- Password policies
-- Encryption
-- Intrusion detection
-- Backups
-- Antivirus protection
-- Manual monitoring and maintenance
-- Physical security controls
-- Fire detection and prevention
-- Data classification
-- Policies and procedures
+This summary has been rewritten in my own words for portfolio purposes.
 
 ---
 
-## Control Findings
+## Controls Assessment
 
-| Control Area | Status | Summary |
-|---|---|---|
-| Least privilege | Needs improvement | Access should be limited so users only have the permissions needed for their role. |
-| Separation of duties | Needs improvement | Responsibilities should be split where possible to reduce the risk of misuse, error or unchecked access. |
-| Disaster recovery planning | Needs improvement | A clear disaster recovery plan is needed to support business continuity after a major incident. |
-| Password policies | Needs improvement | Stronger password requirements and account protection measures would reduce the risk of unauthorised access. |
-| Access control | Needs improvement | User access should be reviewed and managed more formally. |
-| Encryption | Needs improvement | Sensitive data should be protected through appropriate encryption controls. |
-| Intrusion detection | Needs improvement | Monitoring and detection capability should be improved to help identify suspicious activity. |
-| Backups | Needs improvement | Reliable backup processes should be in place and tested regularly. |
-| Antivirus protection | In place / partially in place | Antivirus protection is useful, but should be supported by wider monitoring and response processes. |
-| Physical security | In place / partially in place | Physical controls help protect assets, but should be reviewed alongside wider security processes. |
-| Policies and procedures | Needs improvement | Security policies should be documented, maintained and reviewed regularly. |
+### Controls in Place
+
+| Control                       | Category               | Summary                                                                         |
+| ----------------------------- | ---------------------- | ------------------------------------------------------------------------------- |
+| Firewall                      | Technical              | A firewall was in place to filter traffic using defined security rules.         |
+| Antivirus software            | Technical              | Antivirus software was installed and monitored by the IT department.            |
+| Locks                         | Physical / Operational | Physical locks were in place across the offices, storefront and warehouse.      |
+| CCTV surveillance             | Physical / Operational | CCTV was in place to support physical security monitoring.                      |
+| Fire detection and prevention | Physical / Operational | Fire detection and prevention systems were in place to protect physical assets. |
 
 ---
 
-## Compliance Areas Reviewed
+### Controls Not Fully in Place
 
-The audit also considered compliance requirements connected to:
-
-- Payment card data
-- Personal data
-- Security governance
-- Data protection
-- Access management
-- Incident response
-- Business continuity
+| Control                                              | Category       | Risk / Impact                                                                                                                  |
+| ---------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Least privilege                                      | Administrative | All employees had broad access to internally stored data, increasing the risk of unauthorised access to sensitive information. |
+| Disaster recovery plans                              | Administrative | No disaster recovery plan was in place, creating a business continuity risk if systems or data were lost.                      |
+| Password policies                                    | Administrative | A password policy existed, but the requirements were weak and not aligned with stronger password complexity expectations.      |
+| Separation of duties                                 | Administrative | Duties were not clearly separated, increasing the risk of misuse, error or unchecked access.                                   |
+| Intrusion detection system                           | Technical      | No IDS was installed, limiting the ability to detect suspicious or malicious network activity.                                 |
+| Backups                                              | Technical      | Critical data was not backed up, increasing the risk of permanent data loss.                                                   |
+| Manual monitoring and maintenance for legacy systems | Technical      | Legacy systems were monitored, but there was no regular schedule and intervention methods were unclear.                        |
+| Encryption                                           | Technical      | Encryption was not being used to protect sensitive customer and payment information.                                           |
+| Password management system                           | Technical      | No centralised password management system was in place, increasing security and productivity risks.                            |
 
 ---
 
-## Compliance Findings
+## Compliance Assessment
 
-| Compliance Area | Summary |
-|---|---|
-| PCI DSS | Controls around payment card data should be reviewed and strengthened, particularly where customer payment information is stored, processed or transmitted. |
-| GDPR | Personal data should be protected through appropriate access control, encryption, data handling procedures and incident response planning. |
-| SOC-type controls | Logging, monitoring, access management and incident response processes should be improved to better support security oversight. |
+### PCI DSS
+
+| Best Practice                                                                   | Status  | Summary                                                                                                                    |
+| ------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Only authorised users have access to customers’ credit card information         | Not met | Access to sensitive data was too broad, meaning cardholder data may have been accessible to employees who did not need it. |
+| Credit card information is stored, accepted, processed and transmitted securely | Not met | Credit card information was stored, processed and transmitted internally without sufficient protection.                    |
+| Data encryption is used to secure credit card transaction touchpoints and data  | Not met | Encryption was not in place for payment data.                                                                              |
+| Secure password management policies are adopted                                 | Not met | Password requirements were weak and there was no centralised password management system.                                   |
+
+---
+
+### GDPR
+
+| Best Practice                                                 | Status  | Summary                                                                                  |
+| ------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
+| EU customers’ data is kept private and secure                 | Not met | Customer data was not fully protected due to weak access control and lack of encryption. |
+| EU customers are notified within 72 hours of a breach         | Met     | A breach notification plan was in place for EU customers.                                |
+| Data is properly classified and inventoried                   | Not met | Asset and data classification needed improvement to support stronger security controls.  |
+| Privacy policies and procedures are documented and maintained | Met     | Privacy policies, procedures and processes were developed and enforced.                  |
+
+---
+
+### SOC Type 1 / SOC Type 2
+
+| Best Practice                              | Status  | Summary                                                                                      |
+| ------------------------------------------ | ------- | -------------------------------------------------------------------------------------------- |
+| User access policies are established       | Not met | Access policies were not sufficiently established or enforced.                               |
+| Sensitive data is confidential and private | Not met | Sensitive data protection was not strong enough due to broad access and lack of encryption.  |
+| Data integrity is maintained               | Met     | Controls were in place to support the consistency, accuracy and validation of data.          |
+| Data is available to authorised users      | Not met | Availability controls were incomplete due to missing backups and disaster recovery planning. |
 
 ---
 
@@ -77,14 +79,18 @@ The audit also considered compliance requirements connected to:
 
 The main gaps identified from the checklist were:
 
-- Access control processes were not strong enough
-- Least privilege was not clearly enforced
-- Password and authentication controls needed improvement
-- Monitoring and detection controls were limited
-- Disaster recovery and backup processes needed strengthening
-- Incident response planning was not clearly defined
-- Sensitive data protections needed improvement
-- Compliance requirements needed more structured review
+* No least privilege model
+* No clear separation of duties
+* Weak password policy requirements
+* No centralised password management system
+* No intrusion detection system
+* No encryption for sensitive or payment data
+* No disaster recovery plan
+* No backups of critical data
+* Legacy system monitoring lacked a clear schedule
+* Asset and data classification needed improvement
+* Broad internal access to customer and cardholder data
+* Compliance gaps relating to PCI DSS, GDPR and SOC-type controls
 
 ---
 
@@ -92,22 +98,25 @@ The main gaps identified from the checklist were:
 
 Based on the checklist, the highest priority recommendations were:
 
-1. Implement stronger access control and least privilege principles
-2. Introduce or improve multi-factor authentication
-3. Strengthen password policies and account management
-4. Improve logging, monitoring and alerting
-5. Create or update an incident response plan
-6. Establish and regularly test backup and disaster recovery procedures
-7. Apply encryption to sensitive data where appropriate
-8. Review compliance requirements around personal and payment data
-9. Document security policies and review them regularly
+1. Implement least privilege and role-based access control
+2. Introduce separation of duties for sensitive processes
+3. Strengthen password policy requirements
+4. Implement a centralised password management system
+5. Encrypt sensitive customer and payment data
+6. Install and configure an intrusion detection system
+7. Create and test a disaster recovery plan
+8. Implement regular backups for critical data
+9. Establish a scheduled process for legacy system monitoring and maintenance
+10. Improve asset inventory and data classification
+11. Review PCI DSS, GDPR and SOC-related compliance requirements
+12. Regularly review access policies and security procedures
 
 ---
 
 ## Reflection
 
-This checklist helped me understand how individual controls link back to wider organisational risk.
+This checklist helped me understand how security controls connect to wider business risk.
 
-It also showed that security is not only about having technical tools in place. Policies, procedures, access reviews, documentation, training and recovery planning are just as important when assessing an organisation’s security posture.
+The exercise showed that individual control gaps often combine to create larger risks. For example, broad access to internal data, weak password requirements and no encryption all increase the chance and impact of sensitive data exposure. Similarly, no backups and no disaster recovery plan create a serious risk to business continuity.
 
-The exercise was useful because it encouraged me to think in a structured way about risk, compliance and practical recommendations, rather than simply identifying problems without considering business impact.
+It also reinforced that security is not only technical. Policies, procedures, access reviews, documentation, physical controls and compliance requirements all play an important role in improving an organisation’s security posture.
