@@ -60,7 +60,7 @@ The log showed repeated TCP SYN requests from the unfamiliar IP address `203.0.1
 
 This pattern supported the conclusion that the web server was experiencing a TCP SYN flood denial of service attack.
 
-* [Wireshark TCP/HTTP log](./wireshark-tcp-http-log.xlsx)
+* [Wireshark TCP/HTTP log](./Wireshark_TCP_HTTP_log.xlsx)
 
 <img src="./images/wireshark-syn-flood-log.png" alt="Wireshark TCP HTTP log showing repeated SYN requests linked to a suspected SYN flood attack" width="900">
 
